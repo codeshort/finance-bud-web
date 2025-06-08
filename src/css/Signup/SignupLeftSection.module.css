@@ -1,0 +1,12 @@
+.signup-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  height: 100%;
+}
+
+.signup-form-fields {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}

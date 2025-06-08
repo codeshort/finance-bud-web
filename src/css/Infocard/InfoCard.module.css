@@ -1,0 +1,8 @@
+.info-card-container {
+  padding: 12px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

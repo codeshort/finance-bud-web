@@ -1,0 +1,20 @@
+.or-divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.or-divider-line {
+  flex: 1;
+  border: none;
+  border-top: 2px solid #e5e7eb; /* light gray */
+  margin: 0 16px;
+}
+
+.or-divider-text {
+  color: #757575;
+  font-size: 16px;
+  font-weight: 400;
+  /* Optional: add spacing or custom styles */
+}

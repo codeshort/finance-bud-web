@@ -1,0 +1,27 @@
+.button {
+  border-radius: 12px;
+}
+
+button:focus {
+  outline: none;
+}
+
+.primary {
+  background-color: #6366f1;
+  color: #ffffff;
+  border: none;
+}
+
+.primary:focus {
+  background-color: #4f42b5;
+}
+
+.secondary {
+  background-color: transparent;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.secondary:focus {
+  background-color: #e5e4e2;
+}
