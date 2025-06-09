@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { TextVariant } from '../components-types/Text/TextTypes';
 import LoginLeftSection from '../components/Login/LoginLeftSection';
 import SignupLoginNavbar from '../components/Signup/SIgnupLoginNavbar';
@@ -6,10 +7,17 @@ import Text from '../components/Text/Text';
 import styles from '../css/Login/Login.page.module.css';
 
 export default function Login() {
+  const navigate = useNavigate();
+  const handleSignupClick = () => {
+    navigate('/signup');
+  };
   return (
     <>
       <div className={styles['login-page-wrapper']}>
-        <SignupLoginNavbar buttonText="Sign Up" />
+        <SignupLoginNavbar
+          buttonText="Sign Up"
+          clickHandler={handleSignupClick}
+        />
         <div className={styles['login-main-container']}>
           <div className={styles['login-left-section']}>
             <LoginLeftSection />

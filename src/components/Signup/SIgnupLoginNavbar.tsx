@@ -6,10 +6,12 @@ import Text from '../Text/Text';
 import { TextVariant } from '../../components-types/Text/TextTypes';
 interface SignupLoginNavbarProps {
   buttonText: string;
+  clickHandler: () => void;
 }
 
 export default function SignupLoginNavbar({
   buttonText,
+  clickHandler,
 }: SignupLoginNavbarProps) {
   return (
     <div className={styles.navbar}>
@@ -17,12 +19,7 @@ export default function SignupLoginNavbar({
         <img className={styles['navbar-logo']} src={logo} alt="company-logo" />
         <Text variant={TextVariant.SubHeading}>Pay Buddy</Text>
       </div>
-      <Button
-        variant={ButtonVariant.PRIMARY}
-        onClick={() => {
-          console.log('clicked');
-        }}
-      >
+      <Button variant={ButtonVariant.PRIMARY} onClick={clickHandler}>
         {buttonText}
       </Button>
     </div>
