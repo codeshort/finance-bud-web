@@ -7,7 +7,7 @@ export default function SignupLoginRightSection() {
   return (
     <div className={styles['right-section-container']}>
       <div className="page-header">
-        <Text variant={TextVariant.Heading}>Create your account</Text>
+        <Text variant={TextVariant.Heading}>Simplify Shared Expenses</Text>
         <Text variant={TextVariant.SubHeading}>
           Split expenses with friends easily
         </Text>
