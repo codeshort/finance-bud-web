@@ -1,0 +1,25 @@
+.login-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+}
+
+.login-main-container {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
+
+.login-left-section {
+  width: 50%;
+}
+
+.login-right-section {
+  width: 50%;
+}
+
+.login-footer {
+  width: 100%;
+  text-align: center;
+}

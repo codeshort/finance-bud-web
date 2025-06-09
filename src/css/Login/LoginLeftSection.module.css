@@ -1,0 +1,12 @@
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  height: 100%;
+}
+
+.login-form-fields {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
