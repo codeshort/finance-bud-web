@@ -4,12 +4,21 @@ import SignupLeftSection from '../components/Signup/SignupLeftSection';
 import Text from '../components/Text/Text';
 import { TextVariant } from '../components-types/Text/TextTypes';
 import SignupLoginNavbar from '../components/Signup/SIgnupLoginNavbar';
+import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
+  const navigate = useNavigate();
+  const handleLoginClick = () => {
+    navigate('/login');
+  };
+
   return (
     <>
       <div className={styles['signup-page-wrapper']}>
-        <SignupLoginNavbar buttonText="Log In" />
+        <SignupLoginNavbar
+          buttonText="Log In"
+          clickHandler={handleLoginClick}
+        />
         <div className={styles['signup-main-container']}>
           <div className={styles['left-section']}>
             <SignupLeftSection />
