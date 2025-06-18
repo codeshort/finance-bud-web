@@ -2,14 +2,14 @@ import styles from '../css/Signup/Signup.page.module.css';
 import SignupLoginRightSection from '../components/Signup/SignupLoginRightSection';
 import SignupLeftSection from '../components/Signup/SignupLeftSection';
 import Text from '../components/Text/Text';
-import { TextVariant } from '../components-types/Text/TextTypes';
+import { TextVariant } from '../types/components/Text/TextTypes';
 import SignupLoginNavbar from '../components/Signup/SIgnupLoginNavbar';
-import { useNavigate } from 'react-router-dom';
+import useNavigationManager from '../hooks/Navigation/useNavigationManager';
 
 export default function Signup() {
-  const navigate = useNavigate();
+  const { navigateTo } = useNavigationManager();
   const handleLoginClick = () => {
-    navigate('/login');
+    navigateTo('/login');
   };
 
   return (

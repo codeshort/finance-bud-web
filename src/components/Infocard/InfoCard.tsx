@@ -1,4 +1,4 @@
-import { TextVariant } from '../../components-types/Text/TextTypes';
+import { TextVariant } from '../../types/components/Text/TextTypes';
 import styles from '../../css/Infocard/InfoCard.module.css';
 import Text from '../Text/Text';
 

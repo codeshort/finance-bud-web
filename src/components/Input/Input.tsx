@@ -1,4 +1,4 @@
-import { InputTypes } from '../../components-types/Input/InputTypes';
+import { InputTypes } from '../../types/components/Input/InputTypes';
 import styles from '../../css/Input/Input.module.css';
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
