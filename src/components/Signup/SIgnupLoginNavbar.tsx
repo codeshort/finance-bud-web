@@ -1,9 +1,9 @@
 import styles from '../../css/Signup/SignupLoginNavbar.module.css';
 import logo from '../../assets/budget.png';
 import Button from '../Button/Button';
-import { ButtonVariant } from '../../components-types/Button/ButtonTypes';
+import { ButtonVariant } from '../../types/components/Button/ButtonTypes';
 import Text from '../Text/Text';
-import { TextVariant } from '../../components-types/Text/TextTypes';
+import { TextVariant } from '../../types/components/Text/TextTypes';
 interface SignupLoginNavbarProps {
   buttonText: string;
   clickHandler: () => void;

@@ -1,15 +1,15 @@
-import { useNavigate } from 'react-router-dom';
-import { TextVariant } from '../components-types/Text/TextTypes';
+import { TextVariant } from '../types/components/Text/TextTypes';
 import LoginLeftSection from '../components/Login/LoginLeftSection';
 import SignupLoginNavbar from '../components/Signup/SIgnupLoginNavbar';
 import SignupLoginRightSection from '../components/Signup/SignupLoginRightSection';
 import Text from '../components/Text/Text';
 import styles from '../css/Login/Login.page.module.css';
+import useNavigationManager from '../hooks/Navigation/useNavigationManager';
 
 export default function Login() {
-  const navigate = useNavigate();
+  const { navigateTo } = useNavigationManager();
   const handleSignupClick = () => {
-    navigate('/signup');
+    navigateTo('/signup');
   };
   return (
     <>

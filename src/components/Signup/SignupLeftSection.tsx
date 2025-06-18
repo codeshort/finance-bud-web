@@ -1,9 +1,9 @@
 import Button from '../../components/Button/Button';
 import Input from '../Input/Input';
 import Text from '../Text/Text';
-import { ButtonVariant } from '../../components-types/Button/ButtonTypes';
-import { InputTypes } from '../../components-types/Input/InputTypes';
-import { TextVariant } from '../../components-types/Text/TextTypes';
+import { ButtonVariant } from '../../types/components/Button/ButtonTypes';
+import { InputTypes } from '../../types/components/Input/InputTypes';
+import { TextVariant } from '../../types/components/Text/TextTypes';
 import ORDivider from '../ORDivider/ORDivider';
 import styles from '../../css/Signup/SignupLeftSection.module.css';
 

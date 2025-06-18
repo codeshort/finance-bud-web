@@ -1,4 +1,4 @@
-import { TextVariant } from '../../components-types/Text/TextTypes';
+import { TextVariant } from '../../types/components/Text/TextTypes';
 import Text from '../Text/Text';
 import styles from '../../css/Signup/SignupLoginRightSection.module.css';
 import InfoCard from '../Infocard/InfoCard';
