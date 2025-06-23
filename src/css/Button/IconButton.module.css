@@ -1,0 +1,18 @@
+.icon-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 50%;
+  background-color: #6366f1;
+  padding: 12px;
+  justify-content: center;
+}
+
+.icon-button-image {
+  width: 25px;
+  height: 25px;
+}
+
+.icon-button-label:hover {
+  color: #4f42b5; /* Lighter gray on hover */
+}

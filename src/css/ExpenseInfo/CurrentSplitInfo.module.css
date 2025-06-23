@@ -1,0 +1,15 @@
+.current-split-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 30px;
+  background-color: aliceblue;
+  border-radius: 20px;
+  width: 90%;
+}
+
+.current-split-info-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

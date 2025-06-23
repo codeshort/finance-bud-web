@@ -1,0 +1,18 @@
+.navbar-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 12px;
+  background-color: aliceblue;
+}
+
+.navbar-right {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.navbar-icons {
+  width: 25px;
+  height: 25px;
+}

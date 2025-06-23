@@ -1,0 +1,11 @@
+.sidebar-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 15%;
+  background-color: aliceblue;
+  gap: 20px;
+  padding-top: 20px;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
