@@ -6,6 +6,8 @@
   background-color: #6366f1;
   padding: 12px;
   justify-content: center;
+  align-items: center;
+  width: 60px;
 }
 
 .icon-button-image {

@@ -25,3 +25,33 @@ button:focus {
 .secondary:focus {
   background-color: #e5e4e2;
 }
+
+.circular {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #6366f1;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.circular:hover {
+  background-color: #4f42b5;
+  transform: scale(1.05);
+}
+
+.circular:focus {
+  background-color: #4f42b5;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+.circular:active {
+  transform: scale(0.95);
+}

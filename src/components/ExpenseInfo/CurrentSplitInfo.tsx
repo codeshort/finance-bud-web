@@ -12,7 +12,7 @@ export default function CurrentSplitInfo({
   totalBalance,
   owedAmount,
   lentAmount,
-  currency = 'Rs.',
+  currency = '₹',
 }: CurrenSplitInfoProps) {
   return (
     <div className={styles['current-split-info-wrapper']}>
