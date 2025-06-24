@@ -1,0 +1,8 @@
+.buttoncard-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 80px;
+  border-radius: 24px;
+  background-color: #fcfcfd;
+}
