@@ -10,3 +10,8 @@
 1. Set up Sign up Page
 2. Set up eslint and prettier (important to go through)
 3. Set up Login page
+4. Setup Home Dashboard
+5. API layer work
+6. Navigation architecture
+7. Mobx store
+   
