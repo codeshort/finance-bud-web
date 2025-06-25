@@ -12,25 +12,28 @@ export type ActivityBarProps = {
     amount: number;
     owes?: boolean;
     currency?: string;
-   
+
 }
 
-export default function ActivityBar({name, settled, owes, amount, currency= '₹'}: ActivityBarProps) {
-    const getCurrentStatusText= useCallback(() => {
-        if(settled){
-            return <Text variant={TextVariant.SubHeading} style={{color: 'gray'}}>Settled up</Text>
-        } else if(owes){
-            return <Text variant={TextVariant.SubHeading} style={{color: 'green'}}>Owes you {currency} {amount}</Text>
+export default function ActivityBar({ name, settled, owes, amount, currency = '₹' }: ActivityBarProps) {
+    const getCurrentStatusText = useCallback(() => {
+        if (settled) {
+            return <Text variant={TextVariant.SubHeading} style={{ color: 'gray' }}>Settled up</Text>
+        } else if (owes) {
+            return <Text variant={TextVariant.SubHeading} style={{ color: 'green' }}>Owes you {currency} {amount}</Text>
         } else {
-            return <Text variant={TextVariant.SubHeading} style={{color: 'red'}}>You owe {currency}{amount}</Text>
+            return <Text variant={TextVariant.SubHeading} style={{ color: 'red' }}>You owe {currency}{amount}</Text>
         }
     }, [settled, owes, amount])
-    return(<div className={styles['activity-bar-container']}>
-       <img src={DEFAULT_PROFILE_IMAGE} alt="profile" className={styles['activity-bar-profile-image']}/>
-       <div>
-        <Text variant={TextVariant.SubHeading}>{name}</Text>
-        {getCurrentStatusText()}
-       </div>
-       <Button variant={ButtonVariant.PRIMARY} onClick={() => {}}>Settle up</Button>
+    return (<div className={styles['activity-bar-container']}>
+        <div className={styles['activity-bar-profile-image-container']}>
+            <img src={DEFAULT_PROFILE_IMAGE} alt="profile" className={styles['activity-bar-profile-image']} />
+            <div>
+                <Text variant={TextVariant.SubHeading}>{name}</Text>
+                {getCurrentStatusText()}
+            </div>
+        </div>
+
+        {!settled && <Button variant={ButtonVariant.PRIMARY} onClick={() => { }}>Settle up</Button>}
     </div>)
 }

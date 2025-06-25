@@ -3,6 +3,8 @@
   background: white;
   display: flex;
   justify-content: space-between;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .logo-container {
