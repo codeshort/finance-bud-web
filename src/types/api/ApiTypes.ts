@@ -1,4 +1,4 @@
-export const API_BASE_URL = 'https://api.example.com';
+export const API_BASE_URL = 'https://pay-buddy.onrender.com/api/';
 export type RequestOptions = {
   method: 'GET' | 'POST' | 'PUT' | 'DELETE';
   headers?: Record<string, string>;

@@ -6,14 +6,15 @@ export async function request(
 ) {
   const fullUrl = `${API_BASE_URL}${url}`;
   const res = await fetch(fullUrl, {
+    method: options.method || 'GET',
     headers: {
       'Content-Type': 'application/json',
       ...(options.authToken && {
         Authorization: `Bearer ${options.authToken}`,
-        body: JSON.stringify(options.body),
         credentials: 'include',
       }),
     },
+    body: options.body ? JSON.stringify(options.body) : undefined,
   });
 
   if (!res.ok) {
