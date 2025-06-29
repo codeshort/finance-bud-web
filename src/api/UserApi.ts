@@ -6,7 +6,7 @@ import { errorHandler } from './errorHandling/Error';
 import { request } from './FetchClient';
 
 export async function addUser(user: UserPayload) {
-  const response: UserLoginResponse | ErrorResponse = await request('/signup', {
+  const response: UserLoginResponse | ErrorResponse = await request('users/register', {
     method: 'POST',
     body: JSON.stringify(user),
   });
