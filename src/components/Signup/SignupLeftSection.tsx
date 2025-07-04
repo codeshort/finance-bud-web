@@ -6,26 +6,34 @@ import { InputTypes } from '../../types/components/Input/InputTypes';
 import { TextVariant } from '../../types/components/Text/TextTypes';
 import ORDivider from '../ORDivider/ORDivider';
 import styles from '../../css/Signup/SignupLeftSection.module.css';
-import type { FormEvent } from 'react';
+import { useState, type FormEvent } from 'react';
 import { addUser } from '../../api/UserApi';
+import useNavigationManager from '../../hooks/Navigation/useNavigationManager';
 
 export default function SignupLeftSection() {
-  function handleSignupFormSubmit(event: FormEvent<HTMLFormElement>){
-     event.preventDefault();
-     const formData = new FormData(event.target as HTMLFormElement);
-     const name = formData.get("name") as string;
-     const email = formData.get('email') as string;
-     const password = formData.get('password') as string;
-     const confirmPassword = formData.get('confirmPassword') as string;
-     if(password !== confirmPassword){
-      console.error("Passwords do not match");
-      return;
-     }
+  const [isRegistering, setIsRegistering] = useState(false);
+  const { navigateTo } = useNavigationManager();
 
-     addUser({name, email, password});
-     
-     
+  async function handleSignupFormSubmit(event: FormEvent<HTMLFormElement>) {
+    setIsRegistering(true);
+    console.log('!', isRegistering);
+    event.preventDefault();
+    const formData = new FormData(event.target as HTMLFormElement);
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const password = formData.get('password') as string;
+    const confirmPassword = formData.get('confirmPassword') as string;
+    if (password !== confirmPassword) {
+      console.error('Passwords do not match');
+      return;
+    }
+
+    await addUser({ name, email, password });
+    setIsRegistering(false);
+    navigateTo('/home-dashboard');
   }
+
+  console.log('isPending', isRegistering);
 
   return (
     <div className={styles['signup-form-container']}>
@@ -35,7 +43,10 @@ export default function SignupLeftSection() {
           Split expenses with friends
         </Text>
       </div>
-      <form className={styles['signup-form-fields']} onSubmit={handleSignupFormSubmit}>
+      <form
+        className={styles['signup-form-fields']}
+        onSubmit={handleSignupFormSubmit}
+      >
         <Input
           type={InputTypes.TEXT}
           label="Name"
@@ -65,6 +76,7 @@ export default function SignupLeftSection() {
           onClick={() => {
             console.log('clicked');
           }}
+          isPending={isRegistering}
           style={{ width: '100%' }}
           type="submit"
         >
