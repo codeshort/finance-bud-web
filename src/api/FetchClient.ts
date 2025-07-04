@@ -11,7 +11,6 @@ export async function request(
       'Content-Type': 'application/json',
       ...(options.authToken && {
         Authorization: `Bearer ${options.authToken}`,
-        credentials: 'include',
       }),
     },
     body: options.body ? JSON.stringify(options.body) : undefined,

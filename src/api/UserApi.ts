@@ -6,11 +6,14 @@ import { errorHandler } from './errorHandling/Error';
 import { request } from './FetchClient';
 
 export async function addUser(user: UserPayload) {
-  const response: UserLoginResponse | ErrorResponse = await request('users/register', {
-    method: 'POST',
-    body: JSON.stringify(user),
-  });
-
+  const response: UserLoginResponse | ErrorResponse = await request(
+    'users/register',
+    {
+      method: 'POST',
+      body: user,
+    },
+  );
+  console.log('came here');
   if (isErrorResponse(response)) {
     errorHandler(response);
   } else {

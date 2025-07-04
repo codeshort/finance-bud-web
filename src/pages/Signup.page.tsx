@@ -13,26 +13,21 @@ export default function Signup() {
   };
 
   return (
-    <>
-      <div className={styles['signup-page-wrapper']}>
-        <SignupLoginNavbar
-          buttonText="Log In"
-          clickHandler={handleLoginClick}
-        />
-        <div className={styles['signup-main-container']}>
-          <div className={styles['left-section']}>
-            <SignupLeftSection />
-          </div>
-          <div className={styles['right-section']}>
-            <SignupLoginRightSection />
-          </div>
+    <div className={styles['signup-page-wrapper']}>
+      <SignupLoginNavbar buttonText="Log In" clickHandler={handleLoginClick} />
+      <div className={styles['signup-main-container']}>
+        <div className={styles['left-section']}>
+          <SignupLeftSection />
         </div>
-        <div className={styles.footer}>
-          <Text variant={TextVariant.Caption} style={{ textAlign: 'center' }}>
-            © 2024 FinanceBud. All rights reserved.
-          </Text>
+        <div className={styles['right-section']}>
+          <SignupLoginRightSection />
         </div>
       </div>
-    </>
+      <div className={styles.footer}>
+        <Text variant={TextVariant.Caption} style={{ textAlign: 'center' }}>
+          © 2024 FinanceBud. All rights reserved.
+        </Text>
+      </div>
+    </div>
   );
 }
