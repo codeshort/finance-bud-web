@@ -42,7 +42,7 @@ export default function ActivityBar({
         </Text>
       );
     }
-  }, [settled, owes, amount]);
+  }, [settled, owes, amount, currency]);
   return (
     <div className={styles['activity-bar-container']}>
       <div className={styles['activity-bar-profile-image-container']}>

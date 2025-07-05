@@ -1,0 +1,53 @@
+.invite-form-container {
+ display:flex;
+ width: 50%;
+ flex-direction: column;
+ border: 1px solid #fcfcfd;
+ border-radius: 16px;
+ background-color: #fcfcfd;
+ padding: 16px;
+ gap: 16px;
+}
+
+.invite-form-heading {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.invite-form-selections-container {
+  max-height: 100px;
+  overflow-y: auto;
+  border: 1px solid #F2F0EF;
+  border-radius: 16px;
+  padding-left: 16px;
+  padding-top: 4px;
+   padding-bottom: 4px;
+}
+
+.invite-form-selection {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  align-items: center;
+}
+
+.invite-form-fields {
+
+}
+
+.invite-form-suggestions {
+
+}
+
+.invite-form-actions {
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.invite-form-divider{
+  width: 100%;
+  border-width: 0.8px;
+}

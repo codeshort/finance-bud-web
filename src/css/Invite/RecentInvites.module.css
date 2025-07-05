@@ -1,0 +1,40 @@
+.recent-invites-card-container{
+    display:flex;
+    width: 50%;
+    flex-direction: column;
+    border: 1px solid #fcfcfd;
+    border-radius: 16px;
+    background-color: #fcfcfd;
+    padding: 16px;
+    gap: 16px;
+}
+
+.recent-invites-list{
+    display:flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.recent-invite-item{
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 16px;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.recent-invite-item-info-container {
+    display:flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.recent-invite-item-status-container {
+    width: 18px;
+    height: 18px;
+}
+
+.recent-invite-item-status-icon {
+    width: 18px;
+    height: 18px;
+}
