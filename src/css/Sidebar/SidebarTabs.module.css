@@ -5,6 +5,7 @@
   padding: 12px;
   box-sizing: border-box;
   gap: 10px;
+  margin-left: 2px;
 }
 
 .sidebar-icon {
@@ -16,4 +17,5 @@
   background-color: #6366f1;
   color: white;
   cursor: pointer;
+  width: 80%;
 }

@@ -1,0 +1,10 @@
+.invite-friends-container{
+    width: 85%;
+    height: 100%;
+    display:flex;
+    padding: 12px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    background-color: #F2F0EF;
+}

@@ -3,7 +3,7 @@ import styles from '../../css/Input/Input.module.css';
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   children?: React.ReactNode;
-  label: string;
+  label?: string;
   placeholder: string;
   type: InputTypes;
 };
@@ -17,7 +17,7 @@ export default function Input({
 }: InputProps) {
   return (
     <div className={styles['input-container']}>
-      <label>{label}</label>
+      {label && <label>{label}</label>}
       <input
         type={type}
         className={`${styles[type]}`}

@@ -11,7 +11,7 @@ const mockGroupData = [
     profile: DEFAULT_PROFILE_IMAGE,
     groupName: 'Weekend trip',
     status: 'you owe',
-    amount: "₹200",
+    amount: '₹200',
     lastActivity: '2 days ago',
   },
   {
@@ -19,7 +19,7 @@ const mockGroupData = [
     profile: DEFAULT_PROFILE_IMAGE,
     groupName: 'Dinner group',
     status: 'owes you',
-    amount: "₹500",
+    amount: '₹500',
     lastActivity: '3 days ago',
   },
   {
@@ -35,7 +35,7 @@ const mockGroupData = [
     profile: DEFAULT_PROFILE_IMAGE,
     groupName: 'Movie Night',
     status: 'you owe',
-    amount: "₹800",
+    amount: '₹800',
     lastActivity: '1 week ago',
   },
 ];
