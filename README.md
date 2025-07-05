@@ -14,4 +14,7 @@
 5. API layer work
 6. Navigation architecture
 7. Mobx store
+8. Group Dashboard
+9. Invite friends Page
+10. Hook up Signup API
    
