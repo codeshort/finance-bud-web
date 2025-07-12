@@ -1,5 +1,7 @@
-import type { ErrorResponse } from '../../types/api/ErrorTypes';
+import type { ErrorCode, ErrorResponse } from '../../types/api/ErrorTypes';
+import CustomError from '../../utils/ErrorUtils';
 
 export function errorHandler(error: ErrorResponse) {
-  console.log(error);
+  const customError = new CustomError(error.code as ErrorCode, error.message);
+  throw customError;
 }
