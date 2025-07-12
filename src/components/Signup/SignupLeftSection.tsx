@@ -9,6 +9,7 @@ import styles from '../../css/Signup/SignupLeftSection.module.css';
 import { useState, type FormEvent } from 'react';
 import { addUser } from '../../api/UserApi';
 import useNavigationManager from '../../hooks/Navigation/useNavigationManager';
+import { NavigationEndpoints } from '../../configs/navigation/NavigationEndpoints';
 
 export default function SignupLeftSection() {
   const [isRegistering, setIsRegistering] = useState(false);
@@ -16,7 +17,6 @@ export default function SignupLeftSection() {
 
   async function handleSignupFormSubmit(event: FormEvent<HTMLFormElement>) {
     setIsRegistering(true);
-    console.log('!', isRegistering);
     event.preventDefault();
     const formData = new FormData(event.target as HTMLFormElement);
     const name = formData.get('name') as string;
@@ -27,13 +27,15 @@ export default function SignupLeftSection() {
       console.error('Passwords do not match');
       return;
     }
-
-    await addUser({ name, email, password });
-    setIsRegistering(false);
-    navigateTo('/home-dashboard');
+    try {
+      await addUser({ name, email, password });
+      navigateTo(NavigationEndpoints.HOME_DASHBOARD);
+    } catch (error) {
+      console.error('error', error);
+    } finally {
+      setIsRegistering(false);
+    }
   }
-
-  console.log('isPending', isRegistering);
 
   return (
     <div className={styles['signup-form-container']}>

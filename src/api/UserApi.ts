@@ -13,16 +13,37 @@ export async function addUser(user: UserPayload) {
       body: user,
     },
   );
-  console.log('came here');
   if (isErrorResponse(response)) {
     errorHandler(response);
   } else {
     const userDetails: UserDetails = {
-      id: response.userId,
-      username: response.username,
+      id: response.userId || '',
+      username: response.username || '',
       email: user.email,
     };
     userStore.setCurrentUser(userDetails);
-    userStore.setAuthToken(response.accessToken);
+    userStore.setAuthToken(response['access_token']);
   }
 }
+
+export const loginUser = async (user: UserPayload) => {
+  const response: UserLoginResponse | ErrorResponse = await request(
+    'users/login',
+    {
+      method: 'POST',
+      body: user,
+    },
+  );
+
+  if (isErrorResponse(response)) {
+    errorHandler(response);
+  } else {
+    const userDetails: UserDetails = {
+      id: response.userId || '',
+      username: user.name || '',
+      email: user.email,
+    };
+    userStore.setCurrentUser(userDetails);
+    userStore.setAuthToken(response['access_token']);
+  }
+};
