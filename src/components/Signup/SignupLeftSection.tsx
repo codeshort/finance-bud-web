@@ -10,6 +10,8 @@ import { useState, type FormEvent } from 'react';
 import { addUser } from '../../api/UserApi';
 import useNavigationManager from '../../hooks/Navigation/useNavigationManager';
 import { NavigationEndpoints } from '../../configs/navigation/NavigationEndpoints';
+import { ErrorCode } from '../../types/api/ErrorTypes';
+import CustomError from '../../utils/ErrorUtils';
 
 export default function SignupLeftSection() {
   const [isRegistering, setIsRegistering] = useState(false);
@@ -18,16 +20,20 @@ export default function SignupLeftSection() {
   async function handleSignupFormSubmit(event: FormEvent<HTMLFormElement>) {
     setIsRegistering(true);
     event.preventDefault();
-    const formData = new FormData(event.target as HTMLFormElement);
-    const name = formData.get('name') as string;
-    const email = formData.get('email') as string;
-    const password = formData.get('password') as string;
-    const confirmPassword = formData.get('confirmPassword') as string;
-    if (password !== confirmPassword) {
-      console.error('Passwords do not match');
-      return;
-    }
     try {
+      const formData = new FormData(event.target as HTMLFormElement);
+      const name = formData.get('name') as string;
+      const email = formData.get('email') as string;
+      const password = formData.get('password') as string;
+      const confirmPassword = formData.get('confirmPassword') as string;
+      if (password !== confirmPassword) {
+        const error = new CustomError(
+          ErrorCode.PASSWORD_MISMATCH,
+          'Passwords do not match',
+        );
+        throw error;
+      }
+
       await addUser({ name, email, password });
       navigateTo(NavigationEndpoints.HOME_DASHBOARD);
     } catch (error) {

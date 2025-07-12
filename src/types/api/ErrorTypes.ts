@@ -12,3 +12,13 @@ export function isErrorResponse(response: unknown): response is ErrorResponse {
     'message' in response
   );
 }
+
+export enum ErrorCode {
+  ALREADY_EXISTS = 'ALREADY_EXISTS',
+  USER_NOT_FOUND = 'USER_NOT_FOUND',
+  INVALID_CREDENTIALS = 'INVALID_CREDENTIALS',
+  PASSWORD_MISMATCH = 'PASSWORD_MISMATCH',
+  SERVER_ERROR = 'SERVER_ERROR',
+  DEFAULT = 'DEFAULT',
+  PARSE_ERROR = 'PARSE_ERROR',
+}
