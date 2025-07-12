@@ -5,11 +5,12 @@ import Text from '../components/Text/Text';
 import { TextVariant } from '../types/components/Text/TextTypes';
 import SignupLoginNavbar from '../components/Signup/SIgnupLoginNavbar';
 import useNavigationManager from '../hooks/Navigation/useNavigationManager';
+import { NavigationEndpoints } from '../configs/navigation/NavigationEndpoints';
 
 export default function Signup() {
   const { navigateTo } = useNavigationManager();
   const handleLoginClick = () => {
-    navigateTo('/login');
+    navigateTo(NavigationEndpoints.LOGIN);
   };
 
   return (

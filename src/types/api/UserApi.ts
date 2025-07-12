@@ -1,12 +1,12 @@
 export type UserPayload = {
-  name: string;
+  name?: string;
   email: string;
   password: string;
 };
 
 export type UserLoginResponse = {
-  userId: string;
-  username: string;
-  accessToken: string;
-  refreshToken: string;
+  userId?: string;
+  username?: string;
+  access_token: string;
+  refresh_token: string;
 };

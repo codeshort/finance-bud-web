@@ -16,10 +16,12 @@ export async function request(
     body: options.body ? JSON.stringify(options.body) : undefined,
   });
 
+  const responseJson = await res.json();
+
   if (!res.ok) {
     let errorBody;
     try {
-      errorBody = await res.json();
+      errorBody = responseJson.error;
     } catch {
       errorBody = {
         code: 'PARSE_ERROR',
@@ -33,5 +35,5 @@ export async function request(
       message: errorBody.message || 'An error occurred',
     };
   }
-  return await res.json();
+  return responseJson.data;
 }

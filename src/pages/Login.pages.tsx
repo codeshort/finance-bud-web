@@ -5,11 +5,12 @@ import SignupLoginRightSection from '../components/Signup/SignupLoginRightSectio
 import Text from '../components/Text/Text';
 import styles from '../css/Login/Login.page.module.css';
 import useNavigationManager from '../hooks/Navigation/useNavigationManager';
+import { NavigationEndpoints } from '../configs/navigation/NavigationEndpoints';
 
 export default function Login() {
   const { navigateTo } = useNavigationManager();
   const handleSignupClick = () => {
-    navigateTo('/signup');
+    navigateTo(NavigationEndpoints.SIGNUP);
   };
   return (
     <>
